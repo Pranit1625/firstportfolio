@@ -1,0 +1,121 @@
+.about-me-section {
+  background-color: #f9f6f2; /* same bg as Hero section */
+  color: #111;
+  padding: 6rem 0;
+}
+
+.about-me-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* ===== Profile Image ===== */
+.about-me-image {
+  position: relative;
+  width: 420px; /* adjust size */
+  height: 420px;
+  border-radius: 50%;
+  border: 6px solid #ff4d00; /* clean orange border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-me-image-inner {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 10px; /* 👈 controls distance between image & border */
+  background-color: #f9f6f2; /* match section bg */
+}
+
+.about-me-image-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%; /* 👈 adjust X% and Y% to reposition */
+  border-radius: 50%;
+}
+
+/* ===== Text Section ===== */
+.about-me-text h3 {
+  text-transform: uppercase;
+  color: #777;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.about-me-text h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.about-me-text h1 span {
+  color: #ff4d00;
+}
+
+.about-me-text p {
+  max-width: 500px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* ===== Stats Section ===== */
+.about-me-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.about-me-stats h2 {
+  color: #ff4d00;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+/* ===== Buttons ===== */
+.about-me-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.connect-btn {
+  background-color: #ff4d00;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.connect-btn:hover {
+  background-color: #e04300;
+}
+
+.cv-btn {
+  background-color: transparent;
+  color: #111;
+  padding: 0.8rem 1.6rem;
+  border: 2px solid #111;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cv-btn:hover {
+  background-color: #111;
+  color: #fff;
+}

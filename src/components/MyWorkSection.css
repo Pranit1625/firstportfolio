@@ -1,0 +1,113 @@
+.mywork-section {
+  background-color: #0b0b14;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: floralwhite;
+}
+
+.section-title span {
+  color: #ff6600;
+}
+
+.section-subtitle {
+  color: #b0b0b0;
+  max-width: 600px;
+  margin: 0 auto 60px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.work-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.work-card {
+  background: #ff6600;
+  border-radius: 20px;
+  width: 320px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(255, 102, 0, 0.3);
+}
+
+.work-card h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 20px;
+  text-align: left;
+  color: floralwhite;
+}
+
+.work-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0 0 20px 20px;
+}
+
+.arrow-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: #ff6600;
+  border: none;
+  outline: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.arrow-btn:hover {
+  background: #ff7b26;
+}
+
+.see-all {
+  margin-top: 60px;
+  background: #ff6600;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 25px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.see-all:hover {
+  background: #ff7b26;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .work-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}

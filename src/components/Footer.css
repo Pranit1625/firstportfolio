@@ -1,0 +1,128 @@
+.footer-section {
+  position: relative;
+  background-color: #ff4d00; /* Moxa orange theme */
+  color: #111;
+  padding: 5rem 2rem 7rem;
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Big Background Text */
+.footer-bg-text {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8rem;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.08);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Footer Content */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  flex-wrap: wrap;
+  z-index: 1;
+  position: relative;
+}
+
+.footer-contact,
+.footer-center,
+.footer-location {
+  flex: 1;
+  min-width: 250px;
+  text-align: left;
+}
+
+.footer-center {
+  text-align: center;
+}
+
+.footer-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.footer-contact a,
+.footer-location p {
+  display: block;
+  color: #111;
+  margin-bottom: 0.3rem;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-center p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.footer-center button {
+  background-color: #111;
+  color: #fff;
+  border: none;
+  padding: 0.9rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.footer-center button:hover {
+  background-color: #222;
+}
+
+/* Bottom Section */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-icons a {
+  margin-left: 0.8rem;
+  font-size: 1.2rem;
+  color: #111;
+  transition: 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .footer-bg-text {
+    font-size: 4rem;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

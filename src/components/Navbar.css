@@ -1,0 +1,60 @@
+/* src/components/Navbar.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 6rem;
+  background-color: #fdfbf8;
+  border-bottom: 1px solid #eee;
+  font-family: "Poppins", sans-serif;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.orange {
+  color: #ff4d00;
+  font-size: 1.5rem;
+  margin-right: 0.3rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff4d00;
+}
+
+/* 🔥 Active link */
+.nav-links .active {
+  color: #ff4d00;
+  font-weight: 600;
+}
+
+.contact-btn {
+  border: 1.5px solid #000;
+  background: transparent;
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: #000;
+  color: #fff;
+}

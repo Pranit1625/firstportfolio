@@ -1,0 +1,160 @@
+/* Reset & Base */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #f9f8f7;
+  color: #111;
+  overflow-x: hidden;
+}
+
+/* Hero Layout */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 8rem; /* slightly more horizontal padding */
+  background-color: #f8f7f4;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6rem;
+  width: 100%;
+  max-width: 1300px; /* wider hero for more breathing space */
+}
+
+/* Text Section */
+.hero-text {
+  flex: 1;
+  margin-top: 0;
+}
+
+.hero-text h1 {
+  font-size: 3.6rem; /* bigger headline */
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.creative {
+  color: #ff4d00;
+}
+
+.strike {
+  text-decoration: line-through;
+}
+
+/* Tags */
+.hero-tags {
+  margin: 2.5rem 0 3rem 0;
+  display: flex;
+  gap: 2rem;
+}
+
+.hero-tags span {
+  font-weight: 600;
+  position: relative;
+  font-size: 1rem;
+}
+
+.hero-tags span::after {
+  content: "✹";
+  color: #ff4d00;
+  margin-left: 0.5rem;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.btn-dark {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-dark:hover {
+  background: #333;
+}
+
+.btn-light {
+  background: transparent;
+  color: #111;
+  border: 1px solid #111;
+  padding: 0.9rem 2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-light:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* Image Section */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* needed for background shape layering */
+}
+
+.hero-image::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: transparent;
+  border: 10px solid #ff4d00; /* red geometric outline */
+  border-radius: 100%;
+  z-index: 0;
+  transform: rotate(45deg);
+}
+
+.hero-image img {
+  position: relative;
+  z-index: 2;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 45% 30%;
+  background: #fff;
+  border: 2px solid #111;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero {
+    padding: 3rem 2rem;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-image img {
+    width: 260px;
+    height: 260px;
+  }
+}

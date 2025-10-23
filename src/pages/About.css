@@ -1,0 +1,274 @@
+/* ===== About Page Header ===== */
+.about-header {
+  background-color: #ff4b00;
+  color: #fff;
+  text-align: center;
+  padding: 90px 20px 70px; /* adds comfortable vertical spacing */
+  border-radius: 0 0 40px 40px;
+  margin-bottom: 60px; /* creates space below the orange header */
+}
+
+.about-heading {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.about-subtext {
+  font-size: 1.1rem;
+  font-weight: 400;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ===== Base Section ===== */
+.about-section {
+  background-color: #fffaf6; /* same soft white as home page */
+  color: #111;
+  font-family: "Poppins", sans-serif;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* ===== Hero Container ===== */
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto 6rem;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* ===== Image ===== */
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 420px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  padding: 5px;
+  box-shadow: 0 8px 25px rgba(255, 75, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.about-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 3px; /* border thickness */
+  background: linear-gradient(180deg, #ff4b00, #ff7a00);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.03);
+}
+
+/* ===== Text Content ===== */
+.about-content {
+  flex: 1.3;
+  min-width: 300px;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ff4b00;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.about-subtitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.about-text {
+  line-height: 1.7;
+  font-size: 1rem;
+  color: #444;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+/* ===== Buttons ===== */
+.about-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.about-btn {
+  background-color: #ff4b00;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.about-btn:hover {
+  background-color: #e04300;
+  transform: translateY(-2px);
+}
+
+.about-btn.outline {
+  background-color: transparent;
+  color: #111;
+  border: 2px solid #111;
+}
+
+.about-btn.outline:hover {
+  background-color: #111;
+  color: #fff;
+}
+
+/* ===== Social Icons ===== */
+.about-socials {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.3rem;
+}
+
+.about-socials a {
+  color: #111;
+  transition: all 0.3s ease;
+}
+
+.about-socials a:hover {
+  color: #ff4b00;
+  transform: scale(1.1);
+}
+
+/* ===== Details Section ===== */
+.about-details {
+  background-color: #fff;
+  padding: 4rem 2rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== Cards ===== */
+.about-card {
+  background: #fff;
+  border: 2px solid #000000;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(255, 75, 0, 0.15);
+}
+
+.about-card h3 {
+  color: #000000;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* ===== Lists (Bulleted Style) ===== */
+.about-card ul {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+}
+
+.about-card ul li {
+  color: #333;
+  margin-bottom: 0.4rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* ===== Skill Icons ===== */
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.skill-icons img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.skill-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-buttons {
+    justify-content: center;
+  }
+
+  .about-socials {
+    justify-content: center;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Darker Get In Touch Box ===== */
+.get-in-touch-box {
+  background: linear-gradient(135deg, #1a1a1a, #2b2b2b); /* dark sleek background */
+  color: #fff;
+  border: 2px solid #ff4b00;
+  box-shadow: 0 10px 25px rgba(255, 77, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+.get-in-touch-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(255, 75, 0, 0.35);
+}
+
+.get-in-touch-box h2,
+.get-in-touch-box p,
+.get-in-touch-box a {
+  color: #fff;
+}
