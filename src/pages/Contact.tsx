@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
         <div className="contact-info">
           <h2>Get In Touch</h2>
           <div className="contact-detail">
-            <FaMapMarkerAlt /> <span>123 Main Street, Dublin</span>
+            <FaMapMarkerAlt /> <span>Dublin, Ireland</span>
           </div>
           <div className="contact-detail">
             <FaEnvelope /> <span>pranitmahamuni@gmail.com</span>
@@ -38,7 +38,15 @@ const Contact: React.FC = () => {
             <FaPhoneAlt /> <span>+353 89 123 4567</span>
           </div>
           <div className="contact-detail">
-            <FaInstagram /> <span>@pranitdesigns</span>
+            <FaInstagram />{" "}
+            <a
+              href="https://www.instagram.com/pranitdesigns"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-link"
+            >
+              @pranitdesigns
+            </a>
           </div>
         </div>
 
@@ -64,7 +72,12 @@ const Contact: React.FC = () => {
             onChange={(e) => dispatch(setMessage(e.target.value))}
             required
           ></textarea>
-          <button type="submit" className="contact-btn" disabled={status === "submitting"}>
+
+          <button
+            type="submit"
+            className="contact-btn"
+            disabled={status === "submitting"}
+          >
             {status === "submitting" ? "Sending..." : "Send Message"}
           </button>
 

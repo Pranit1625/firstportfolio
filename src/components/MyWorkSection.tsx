@@ -8,15 +8,15 @@ const MyWorkSection = () => {
   const cards = [
     {
       title: "App Design",
-      img: "/logos/app-design.png",
+      img: `${import.meta.env.BASE_URL}logos/app-design.png`,
     },
     {
       title: "Web Design",
-      img: "/logos/web-design.png",
+      img: `${import.meta.env.BASE_URL}logos/web-design.png`,
     },
     {
       title: "Graphic Design",
-      img: "/logos/graphic-design.png",
+      img: `${import.meta.env.BASE_URL}logos/graphic-design.png`,
     },
   ];
 
@@ -26,7 +26,9 @@ const MyWorkSection = () => {
         My <span>Services</span>
       </h2>
       <p className="section-subtitle">
-        I specialize in creating modern, responsive, and user-focused digital experiences. From crafting elegant designs to building fully functional websites, I help brands bring their ideas to life.
+        I specialize in creating modern, responsive, and user-focused digital experiences. 
+        From crafting elegant designs to building fully functional websites, 
+        I help brands bring their ideas to life.
       </p>
 
       <div className="work-cards">
@@ -37,6 +39,7 @@ const MyWorkSection = () => {
             onClick={() => navigate("/projects")}
           >
             <h3>{card.title}</h3>
+            {/* ✅ Fixed image path for GitHub Pages */}
             <img src={card.img} alt={card.title} />
             <button className="arrow-btn">
               <ArrowUpRight size={18} />

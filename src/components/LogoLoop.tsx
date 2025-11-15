@@ -25,7 +25,7 @@ export interface LogoLoopProps {
 
 const LogoLoop: React.FC<LogoLoopProps> = ({
   logos,
-  speed = 60, // pixels/sec — increase for faster, decrease for slower
+  speed = 60,
   direction = "left",
   logoHeight = 40,
   gap = 32,
@@ -40,7 +40,7 @@ const LogoLoop: React.FC<LogoLoopProps> = ({
   const containerRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
 
-  // duplicate logos to allow seamless scroll
+  // Duplicate logos for seamless scrolling
   const doubled = useMemo(() => [...logos, ...logos], [logos]);
 
   useEffect(() => {
@@ -48,15 +48,12 @@ const LogoLoop: React.FC<LogoLoopProps> = ({
     const container = containerRef.current;
     if (!track || !container) return;
 
-    // compute total width of one sequence (half of doubled)
     const seqWidth = track.scrollWidth / 2 || 0;
-
-    let pos = 0; // px
+    let pos = 0;
     let lastTime = performance.now();
     let raf = 0;
     let isPaused = false;
 
-    // named handlers so removal works
     const handleMouseEnter = () => {
       if (pauseOnHover) isPaused = true;
     };
@@ -74,22 +71,16 @@ const LogoLoop: React.FC<LogoLoopProps> = ({
 
     const animate = (time: number) => {
       if (!isPaused) {
-        const dt = Math.max(0, time - lastTime) / 1000; // seconds
+        const dt = Math.max(0, time - lastTime) / 1000;
         lastTime = time;
-        const distance = speed * dt; // pixels to move this frame
+        const distance = speed * dt;
 
         pos += direction === "left" ? -distance : distance;
 
-        // clamp/reset to keep value in manageable range
-        if (seqWidth > 0) {
-          // wrap when we've moved one sequence width
-          if (Math.abs(pos) >= seqWidth) {
-            // modulo but keep sign/direction
-            pos = pos % seqWidth;
-          }
+        if (seqWidth > 0 && Math.abs(pos) >= seqWidth) {
+          pos = pos % seqWidth;
         }
 
-        // apply transform
         track.style.transform = `translate3d(${pos}px, 0, 0)`;
       } else {
         lastTime = time;
@@ -109,7 +100,6 @@ const LogoLoop: React.FC<LogoLoopProps> = ({
     };
   }, [speed, direction, pauseOnHover, logos]);
 
-  // CSS custom properties applied inline for easy tuning
   const cssVars: React.CSSProperties = {
     ["--logoloop-gap" as any]: `${gap}px`,
     ["--logoloop-logoHeight" as any]: `${logoHeight}px`,
@@ -145,10 +135,19 @@ const LogoLoop: React.FC<LogoLoopProps> = ({
                   target="_blank"
                   rel="noreferrer noopener"
                 >
-                  <img src={logo.src} alt={logo.alt ?? ""} draggable={false} />
+                  {/* ✅ Works for both local & GitHub Pages */}
+                  <img
+                    src={logo.src.startsWith("/") ? logo.src : `/${logo.src}`}
+                    alt={logo.alt ?? ""}
+                    draggable={false}
+                  />
                 </a>
               ) : (
-                <img src={logo.src} alt={logo.alt ?? ""} draggable={false} />
+                <img
+                  src={logo.src.startsWith("/") ? logo.src : `/${logo.src}`}
+                  alt={logo.alt ?? ""}
+                  draggable={false}
+                />
               )}
             </div>
           ))}

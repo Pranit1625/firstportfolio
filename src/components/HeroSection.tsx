@@ -27,7 +27,7 @@ const HeroSection = () => {
         </div>
 
         <div className="hero-image">
-          <img src="/Profile image 2.png" alt="Designer portrait" />
+          <img src={`${import.meta.env.BASE_URL}Profile image 2.png`} alt="Designer portrait" />
         </div>
       </div>
     </section>

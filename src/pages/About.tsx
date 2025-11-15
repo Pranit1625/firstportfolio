@@ -12,17 +12,21 @@ const About: React.FC = () => {
   return (
     <section className="about-section">
       {/* ========== HERO SECTION ========== */}
-      {/* Page Header Section */}
-<div className="about-header">
-  <h1 className="about-heading">About Me</h1>
-  <p className="about-subtext">
-    Get to know more about me, my background, and the skills I’ve built along the way.
-  </p>
-</div>
+      <div className="about-header">
+        <h1 className="about-heading">About Me</h1>
+        <p className="about-subtext">
+          Get to know more about me, my background, and the skills I’ve built along the way.
+        </p>
+      </div>
+
       <div className="about-container">
         {/* Left Side - Image */}
         <div className="about-image">
-          <img src="/about/aboutimg.jpg" alt="Profile" />
+          {/* ✅ Fixed image path for GitHub Pages */}
+          <img
+            src={`${import.meta.env.BASE_URL}about/aboutimg.jpg`}
+            alt="Profile"
+          />
         </div>
 
         {/* Right Side - Text Content */}
@@ -30,18 +34,18 @@ const About: React.FC = () => {
           <h1 className="about-title">ABOUT ME</h1>
           <h3 className="about-subtitle">PRANIT MAHAMUNI — DESIGNER</h3>
           <p className="about-text">
-            I’m a passionate designer who loves blending creativity and
-            functionality to craft meaningful visual experiences. My work spans
-            UI/UX design, illustration, and motion graphics — all driven by a
-            desire to bring stories to life through design. Every project I take
-            on is an opportunity to push creative boundaries and craft something
+            I’m a passionate designer who loves blending creativity and functionality 
+            to craft meaningful visual experiences. My work spans UI/UX design, illustration, 
+            and motion graphics — all driven by a desire to bring stories to life through design. 
+            Every project I take on is an opportunity to push creative boundaries and craft something 
             truly impactful.
           </p>
 
           {/* Buttons */}
           <div className="about-buttons">
+            {/* ✅ Fixed resume and portfolio paths */}
             <a
-              href="/resume/Resume.pdf"
+              href={`${import.meta.env.BASE_URL}resume/Resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="about-btn"
@@ -49,7 +53,7 @@ const About: React.FC = () => {
               View Resume
             </a>
             <a
-              href="/portfolio/Final Portfolio.pdf"
+              href={`${import.meta.env.BASE_URL}portfolio/Final Portfolio.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="about-btn outline"
@@ -84,16 +88,17 @@ const About: React.FC = () => {
           <div className="about-card">
             <h3>Technical Skills</h3>
             <div className="skill-icons">
-              <img src="/logos/figma.jpeg" alt="Figma" />
-              <img src="/logos/premier.png" alt="Premiere Pro" />
-              <img src="/logos/aftereffects.png" alt="After Effects" />
-              <img src="/logos/illustrator.png" alt="Illustrator" />
-              <img src="/logos/indesign.png" alt="InDesign" />
-              <img src="/logos/photoshop.png" alt="Photoshop" />
-              <img src="/logos/coreldraw.jpeg" alt="Corel Draw" />
-              <img src="/logos/canva.jpeg" alt="Canva" />
-              <img src="/logos/krita.png" alt="Krita" />
-              <img src="/logos/Maya.png" alt="Maya" />
+              {/* ✅ Fixed all logo paths */}
+              <img src={`${import.meta.env.BASE_URL}logos/figma.jpeg`} alt="Figma" />
+              <img src={`${import.meta.env.BASE_URL}logos/premier.png`} alt="Premiere Pro" />
+              <img src={`${import.meta.env.BASE_URL}logos/aftereffects.png`} alt="After Effects" />
+              <img src={`${import.meta.env.BASE_URL}logos/illustrator.png`} alt="Illustrator" />
+              <img src={`${import.meta.env.BASE_URL}logos/indesign.png`} alt="InDesign" />
+              <img src={`${import.meta.env.BASE_URL}logos/photoshop.png`} alt="Photoshop" />
+              <img src={`${import.meta.env.BASE_URL}logos/coreldraw.jpeg`} alt="Corel Draw" />
+              <img src={`${import.meta.env.BASE_URL}logos/canva.jpeg`} alt="Canva" />
+              <img src={`${import.meta.env.BASE_URL}logos/krita.png`} alt="Krita" />
+              <img src={`${import.meta.env.BASE_URL}logos/Maya.png`} alt="Maya" />
             </div>
           </div>
 

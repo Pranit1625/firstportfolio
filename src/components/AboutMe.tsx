@@ -14,7 +14,7 @@ const AboutMe = () => {
         {/* Profile Image */}
         <div className="about-me-image">
           <div className="about-me-image-inner">
-            <img src="/Aboutme.png" alt="Profile" />
+            <img src={`${import.meta.env.BASE_URL}Aboutme.png`} alt="Profile" />
           </div>
         </div>
 
@@ -51,7 +51,7 @@ const AboutMe = () => {
             <button className="connect-btn" onClick={handleConnect}>
               Let’s connect
             </button>
-            <a href="/resume.pdf" download className="cv-btn">
+            <a href={`${import.meta.env.BASE_URL}resume.pdf`} download className="cv-btn">
               Download CV
             </a>
           </div>

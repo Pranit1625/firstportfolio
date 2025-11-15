@@ -1,4 +1,4 @@
-// src/components/Navbar.tsx
+// src/components/Navbar.tsx 
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
@@ -29,6 +29,11 @@ const Navbar = () => {
         <li>
           <NavLink to="/gallery" className={({ isActive }) => (isActive ? "active" : "")}>
             Gallery
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/blog" className={({ isActive }) => (isActive ? "active" : "")}>
+            Blog
           </NavLink>
         </li>
         <li>
