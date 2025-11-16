@@ -3,11 +3,18 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import "./BlogPost.css";
 
-// Import all images from assets
+// Professional Headshot Images
 import headshot from "../assets/blog-images/headshot.png";
-import editingScreenshot from "../assets/blog-images/editingScreenshot.png";
+import editingScreenshot1 from "../assets/blog-images/editingScreenshot1.png";
+import editingScreenshot2 from "../assets/blog-images/editingScreenshot2.png";
+import editingScreenshot3 from "../assets/blog-images/editingScreenshot3.png";
+import editingScreenshot4 from "../assets/blog-images/editingScreenshot4.png";
+
+// Aesthetic Blog
 import landscape1 from "../assets/blog-images/landscape1.jpg";
 import landscape2 from "../assets/blog-images/landscape2.jpg";
+
+// Passion Blog
 import portrait from "../assets/blog-images/portrait.jpg";
 import sunsetUL from "../assets/blog-images/sunsetUL.jpg";
 
@@ -20,25 +27,40 @@ interface BlogEntry {
   images: { src: string; caption: string }[];
 }
 
-// All your 3 blogs here
 const BLOGS: Record<BlogId, BlogEntry> = {
   headshot: {
     title: "Professional Headshot – Editing Breakdown",
     date: "15 November 2025",
     paragraphs: [
-      "This professional headshot was captured with the goal of creating a clean, confident and modern look suitable for my portfolio and professional platforms.",
-      "In Adobe Photoshop, I focused on enhancing the lighting, skin texture and overall clarity, while keeping the result natural and true to how I look.",
-      "Tools used include the Dodge Tool, Healing Brush and Camera Raw adjustments to refine the facial structure, balance the exposure and remove minor distractions.",
+      "This professional headshot was captured to create a clean, confident and modern look suitable for my portfolio, resume and LinkedIn.",
+      "The editing process focused on maintaining natural skin texture while improving lighting, contrast and color balance for a polished final result.",
+      "Below are all the Camera Raw and Photoshop adjustments used, including Dodge, Burn and Healing Brush for fine retouching.",
     ],
     images: [
       {
         src: headshot,
-        caption: "Formal business headshot taken with controlled lighting and post-processing. The headshot conveys a clean, professional look for academic and corporate use.",
+        caption:
+          "Final professional business headshot with controlled lighting and polished skin tones.",
       },
       {
-        src: editingScreenshot,
+        src: editingScreenshot1,
         caption:
-          "Photoshop editing settings showing exposure, contrast and local adjustments used.",
+          "Basic Panel adjustments: Exposure -0.35, Contrast +6, Highlights +5, Shadows -11, Whites -100, Blacks +22, Texture -20, Vibrance +11.",
+      },
+      {
+        src: editingScreenshot2,
+        caption:
+          "Color Grading adjustments: Midtones, Shadows and Highlights refined for balanced skin tones. Blending set to 100, Balance -27.",
+      },
+      {
+        src: editingScreenshot3,
+        caption:
+          "Brightness/Contrast layer applied: Brightness -5, Contrast -21. Helps soften harsh tonal transitions.",
+      },
+      {
+        src: editingScreenshot4,
+        caption:
+          "Exposure layer: Exposure -0.39 to fine-tune highlights and bring uniform lighting across the portrait.",
       },
     ],
   },
@@ -47,19 +69,12 @@ const BLOGS: Record<BlogId, BlogEntry> = {
     title: "Aesthetic Landscape Photography",
     date: "16 November 2025",
     paragraphs: [
-      "These two landscape photos reflect my interest in capturing calm, atmospheric scenes with simple but strong compositions.",
-      "My main focus was on natural light, depth and how the colors worked together to create a peaceful aesthetic.",
-      "In editing, I used subtle contrast and vibrance adjustments to enhance the mood without over-saturating the image.",
+      "These two aesthetic landscape shots explore calm tones, depth and atmospheric lighting.",
+      "I aimed for natural color grading with subtle contrast to preserve the peaceful mood.",
     ],
     images: [
-      {
-        src: landscape1,
-        caption: "Aesthetic landscape shot 1, focusing on depth and leading lines.",
-      },
-      {
-        src: landscape2,
-        caption: "Aesthetic landscape shot 2, with balanced sky and foreground.",
-      },
+      { src: landscape1, caption: "Aesthetic Landscape 1 — balanced composition with warm tones." },
+      { src: landscape2, caption: "Aesthetic Landscape 2 — captured during golden hour for soft mood." },
     ],
   },
 
@@ -67,19 +82,12 @@ const BLOGS: Record<BlogId, BlogEntry> = {
     title: "My Passion: Photography",
     date: "16 November 2025",
     paragraphs: [
-      "Photography is my main creative passion. It allows me to freeze real moments and turn them into visual stories.",
-      "The portrait image represents how I enjoy working with people, expressions and light to create character-focused images.",
-      "The sunset photo was captured at the University of Limerick. It represents how I love observing light, timing and atmosphere in daily life.",
+      "Photography is my main creative passion. I love capturing expressions, emotions and the beauty of natural light.",
+      "The portrait image shows my interest in character-based photos, while the sunset at UL captures mood and timing.",
     ],
     images: [
-      {
-        src: portrait,
-        caption: "Portrait photograph representing my interest in people and expression.",
-      },
-      {
-        src: sunsetUL,
-        caption: "Sunset at UL campus, capturing warm tones and mood.",
-      },
+      { src: portrait, caption: "Portrait photograph expressing interest in people and storytelling." },
+      { src: sunsetUL, caption: "Sunset at UL campus — captured for its warm atmosphere and timing." },
     ],
   },
 };
@@ -91,16 +99,14 @@ const BlogPost = () => {
   const blog = id ? BLOGS[id] : undefined;
   const [fullscreenSrc, setFullscreenSrc] = useState<string | null>(null);
 
-  if (!blog) {
-    return <div className="not-found">Blog not found.</div>;
-  }
+  if (!blog) return <div className="not-found">Blog not found.</div>;
 
   return (
     <div className="blogpost-container">
       <h1 className="blogpost-title">{blog.title}</h1>
       <p className="blogpost-date">{blog.date}</p>
 
-      {/* IMAGES (in medium boxes, clickable) */}
+      {/* Image Grid */}
       <div className="blogpost-image-grid">
         {blog.images.map((img, index) => (
           <div className="blogpost-image-wrapper" key={index}>
@@ -115,7 +121,7 @@ const BlogPost = () => {
         ))}
       </div>
 
-      {/* TEXT CONTENT */}
+      {/* Text */}
       <div className="blogpost-text">
         {blog.paragraphs.map((para, index) => (
           <p className="blogpost-content" key={index}>
@@ -124,12 +130,9 @@ const BlogPost = () => {
         ))}
       </div>
 
-      {/* FULLSCREEN OVERLAY */}
+      {/* Fullscreen Modal */}
       {fullscreenSrc && (
-        <div
-          className="fullscreen-overlay"
-          onClick={() => setFullscreenSrc(null)}
-        >
+        <div className="fullscreen-overlay" onClick={() => setFullscreenSrc(null)}>
           <img src={fullscreenSrc} className="fullscreen-image" />
         </div>
       )}

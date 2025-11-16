@@ -8,7 +8,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Blog from "./pages/Blog";
-import BlogPost from "./pages/Blogpost";
+import BlogPost from "./pages/BlogPost";
 
 function App() {
   return (
