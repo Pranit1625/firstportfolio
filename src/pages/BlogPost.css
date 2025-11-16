@@ -1,0 +1,92 @@
+/* src/pages/BlogPost.css */
+
+.blogpost-container {
+  max-width: 850px;
+  margin: 120px auto 60px auto;
+  padding: 0 1.5rem;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+.blogpost-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.blogpost-date {
+  color: #777;
+  margin-bottom: 2rem;
+}
+
+/* ----- IMAGE GRID FIXED CLEAN LAYOUT ------ */
+.blogpost-image-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.blogpost-image-wrapper {
+  width: 48%;
+  min-width: 260px;
+}
+
+/* Image thumbnail FIXED SIZE */
+.blogpost-thumb {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/5;     /* Keeps portrait shape perfect */
+  object-fit: cover;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transition: 0.2s ease;
+}
+
+.blogpost-thumb:hover {
+  transform: translateY(-4px);
+}
+
+.blogpost-image-caption {
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* TEXT BELOW */
+.blogpost-text {
+  margin-top: 1rem;
+}
+
+.blogpost-content {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+/* FULLSCREEN OVERLAY */
+.fullscreen-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.fullscreen-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.not-found {
+  text-align: center;
+  margin-top: 150px;
+  font-size: 1.5rem;
+}

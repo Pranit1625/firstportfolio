@@ -7,6 +7,8 @@ import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/Blogpost";
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
+
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
