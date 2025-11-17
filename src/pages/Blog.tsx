@@ -33,7 +33,7 @@ const Blog = () => {
       id: "photography",
       title: "My Passion for Photography",
       image: portraitThumb,
-      date: "17 Nov 2025",
+      date: "16 Nov 2025",
       category: "Personal Journey",
       excerpt:
         "Why photography inspires me, featuring a portrait and a sunset captured at UL.",
