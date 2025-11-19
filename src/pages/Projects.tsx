@@ -71,28 +71,28 @@ const projects: Project[] = [
     description: "Logo animation video using Adobe After Effects.",
     image: `${import.meta.env.BASE_URL}Cardimages/Logo Animation image.png`,
     type: "video",
-    link: `${import.meta.env.BASE_URL}VideoProject/Logo animation.mp4`,
+    link: `${import.meta.env.BASE_URL}VideoProject/logo_animation.mp4`,
   },
   {
     title: "Breaking Bad Promo",
     description: "Breaking Bad promo using 3D camera feature in Adobe After Effects.",
     image: `${import.meta.env.BASE_URL}Cardimages/3d Camera image.png`,
     type: "video",
-    link: `${import.meta.env.BASE_URL}VideoProject/Logo animation.mp4`,
+    link: `${import.meta.env.BASE_URL}VideoProject/3d_camera_view.mp4`,
   },
   {
     title: "Stop Motion Animation",
     description: "Basic stop motion animation using Adobe Premiere Pro.",
     image: `${import.meta.env.BASE_URL}Cardimages/Stop motion image.png`,
     type: "video",
-    link: `${import.meta.env.BASE_URL}VideoProject/Stop motion Video.mp4`,
+    link: `${import.meta.env.BASE_URL}VideoProject/stop_motion_video.mp4`,
   },
   {
     title: "Motion Poster",
     description: "Motion poster for an orange juice brand using Adobe After Effects and Illustrator.",
     image: `${import.meta.env.BASE_URL}Cardimages/Motion poster image.png`,
     type: "video",
-    link: `${import.meta.env.BASE_URL}VideoProject/Motion poster Orange Juice.mp4`,
+    link: `${import.meta.env.BASE_URL}VideoProject/motion_poster_orange_juice.mp4`,
   },
 ];
 
