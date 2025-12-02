@@ -90,3 +90,33 @@
   margin-top: 150px;
   font-size: 1.5rem;
 }
+
+.blogpost-section {
+  margin-top: 2.5rem;
+}
+
+.blogpost-section-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Responsive 16:9 video frame */
+.blogpost-video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 1.5rem auto;
+  padding-top: 56.25%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.blogpost-video-wrapper iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}

@@ -6,6 +6,7 @@ import "./Blog.css";
 import headshotThumb from "../assets/blog-images/headshot.png";
 import landscapeThumb from "../assets/blog-images/landscape1.jpg";
 import portraitThumb from "../assets/blog-images/portrait.jpg";
+import stikieThumb from "../assets/blog-images/Tough-Tape.png"; // team BTS image
 
 const Blog = () => {
   const navigate = useNavigate();
@@ -37,6 +38,15 @@ const Blog = () => {
       category: "Personal Journey",
       excerpt:
         "Why photography inspires me, featuring a portrait and a sunset captured at UL.",
+    },
+    {
+      id: "stikie",
+      title: "Behind the Scenes of Our “Stik-ie Tape” Advertisement",
+      image: stikieThumb,
+      date: "30 Nov 2025",
+      category: "Videography",
+      excerpt:
+        "How our three-person team planned, filmed and edited a blackhole-themed ad for Stik-ie Tape.",
     },
   ];
 
