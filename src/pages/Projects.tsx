@@ -10,29 +10,16 @@ interface Project {
 }
 
 const projects: Project[] = [
-  // ✅ NEW PROJECT (Interactive Media Storyboard)
-  {
-    title: "Ghost Steps (Interactive Media Storyboard)",
-    description:
-      "Interactive installation storyboard (UN SDG 7) where footsteps generate visible energy trails and power a virtual city.",
-    image: `${import.meta.env.BASE_URL}Cardimages/Ghost_Steps.png`,
-    type: "pdf",
-    link: `${import.meta.env.BASE_URL}pdfpresentation/Ghost_Steps_Storyboard.pdf`,
-  },
-
-  // ------- Existing Projects -------
   {
     title: "Sweet Earth",
-    description:
-      "Logo and post presentation using Adobe Illustrator and Photoshop.",
+    description: "Logo and post presentation using Adobe Illustrator and Photoshop.",
     image: `${import.meta.env.BASE_URL}Cardimages/Sweet earth logo.png`,
     type: "pdf",
     link: `${import.meta.env.BASE_URL}pdfpresentation/Sweet Earth Presentation.pdf`,
   },
   {
     title: "Mr. Rice Guy",
-    description:
-      "Authentic rice bowl app and website design using Figma and Adobe Illustrator.",
+    description: "Authentic rice bowl app and website design using Figma and Adobe Illustrator.",
     image: `${import.meta.env.BASE_URL}Cardimages/iPhone in Hand Mockup.png`,
     type: "pdf",
     link: `${import.meta.env.BASE_URL}pdfpresentation/Mr. Rice Guy.pdf`,
@@ -79,6 +66,18 @@ const projects: Project[] = [
     type: "pdf",
     link: `${import.meta.env.BASE_URL}pdfpresentation/Sparta wear brochure.pdf`,
   },
+
+  // ✅ NEW PROJECT (Interactive Media Storyboard)
+  {
+    title: "Ghost Steps: Invisible Energy Made Visible",
+    description:
+      "Interactive Media Storyboard (UN SDG 7) — an installation concept that visualises energy through footsteps using sensors, rules, and real-time visual feedback.",
+    image: `${import.meta.env.BASE_URL}Cardimages/Ghost_Steps.png`,
+    type: "pdf",
+    link: `${import.meta.env.BASE_URL}pdfpresentation/Ghost_Steps_Storyboard.pdf`,
+  },
+
+  // Videos
   {
     title: "Logo Animation",
     description: "Logo animation video using Adobe After Effects.",
