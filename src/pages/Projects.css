@@ -33,6 +33,7 @@
   gap: 2rem;
   padding: 4rem 6%;
   justify-items: center;
+  align-items: stretch;
 }
 
 .project-card {
@@ -44,7 +45,9 @@
   display: flex;
   flex-direction: column;
   max-width: 320px;
-  height: 420px; /* ✅ fixed height for uniformity */
+  width: 100%;
+  min-height: 460px;
+  height: 100%;
 }
 
 .project-card:hover {
@@ -54,9 +57,10 @@
 
 .project-image {
   width: 100%;
-  height: 200px; /* ✅ slightly smaller to balance text area */
+  height: 190px;
   object-fit: cover;
   border-bottom: 4px solid #ff4b00;
+  flex-shrink: 0;
 }
 
 .project-content {
@@ -67,23 +71,40 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex-grow: 1;
+  flex: 1;
   border-radius: 0 0 1.2rem 1.2rem;
+  min-height: 0;
+}
+
+.project-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-content h3 {
-  font-size: 1.1rem;
+  font-size: 1.65rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   color: #fff;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 4.05rem;
 }
 
 .project-content p {
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   color: #ccc;
-  flex-grow: 1;
-  line-height: 1.4;
-  margin-bottom: 1rem; /* ✅ ensures space before button */
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 6.6rem;
 }
 
 .view-btn {
@@ -91,11 +112,13 @@
   color: #fff;
   border: none;
   border-radius: 0.5rem;
-  padding: 0.6rem 1rem;
-  margin-top: auto; /* ✅ pushes button to bottom */
+  padding: 0.75rem 1.2rem;
+  margin-top: auto;
   align-self: flex-start;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
 .view-btn:hover {
@@ -106,19 +129,22 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.82);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2000;
+  padding: 1rem;
 }
 
 .modal-content {
   background: #fff;
   border-radius: 1rem;
   padding: 2rem;
-  max-width: 900px;
+  max-width: 950px;
   width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
   position: relative;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
@@ -126,9 +152,53 @@
 .modal-content h2 {
   font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   color: #222;
   text-align: center;
+  line-height: 1.4;
+  padding-right: 2rem;
+}
+
+.modal-description {
+  text-align: center;
+  color: #555;
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.media-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.media-tab {
+  background-color: #f3f3f3;
+  color: #222;
+  border: 2px solid transparent;
+  border-radius: 0.6rem;
+  padding: 0.65rem 1.2rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.media-tab:hover {
+  background-color: #ffe7dc;
+  color: #ff4b00;
+}
+
+.media-tab.active {
+  background-color: #ff4b00;
+  color: #fff;
+  border-color: #ff4b00;
+}
+
+.media-wrapper {
+  width: 100%;
 }
 
 .project-media {
@@ -148,6 +218,7 @@
   border: none;
   cursor: pointer;
   color: #333;
+  transition: color 0.3s ease;
 }
 
 .close-btn:hover {
@@ -155,15 +226,77 @@
 }
 
 @media (max-width: 768px) {
+  .projects-header {
+    padding: 5rem 1.25rem 3rem;
+  }
+
+  .projects-header h1 {
+    font-size: 2.3rem;
+  }
+
+  .projects-header p {
+    font-size: 0.95rem;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
+    padding: 3rem 5%;
   }
 
   .project-card {
-    max-width: 90%;
+    max-width: 100%;
+    min-height: auto;
+  }
+
+  .project-image {
+    height: 220px;
+  }
+
+  .project-content h3 {
+    font-size: 1.15rem;
+    min-height: auto;
+  }
+
+  .project-content p {
+    font-size: 0.95rem;
+    min-height: auto;
+    -webkit-line-clamp: 5;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 1.25rem;
+  }
+
+  .modal-content h2 {
+    font-size: 1.25rem;
+    padding-right: 1.5rem;
+  }
+
+  .modal-description {
+    font-size: 0.9rem;
+  }
+
+  .media-tab {
+    width: 100%;
+    max-width: 220px;
   }
 
   .project-media {
     height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-header h1 {
+    font-size: 2rem;
+  }
+
+  .project-image {
+    height: 200px;
+  }
+
+  .project-media {
+    height: 280px;
   }
 }
