@@ -82,6 +82,14 @@ const projects: Project[] = [
     videoType: "youtube",
   },
   {
+    title: "DETACHABLE KALEIDOSCOPE",
+    description:
+      "An interactive media installation exploring modular storytelling and visual transformation through a detachable kaleidoscope system.",
+    image: `${import.meta.env.BASE_URL}Cardimages/Detachable_Kaleidoscope.png`,
+    videoLink: "https://www.youtube.com/embed/QLhWnRbSY3s",
+    videoType: "youtube",
+  },
+  {
     title: "Logo Animation",
     description: "Logo animation video using Adobe After Effects.",
     image: `${import.meta.env.BASE_URL}Cardimages/Logo Animation image.png`,
